@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Deeplink Test</title>
+</head>
+<body>
+<button id="button-youtube">Open Youtube</button>
+<button id="button-youtube-iframe">Open Youtube via iframe</button>
+<br />
+<button id="button-sber">Open Sber</button>
+<button id="button-sber-iframe">Open Sber via iframe</button>
+<iframe id="iframe" width="0" height="0"></iframe>
+<script type="text/javascript">
+	const link = "vnd.youtube://4KnNVK-udTU";
+	document.getElementById("button-youtube").addEventListener('click', () => {
+		window.location = link;
+	});
+	document.getElementById("button-youtube-iframe").addEventListener('click', () => {
+		document.getElementById("iframe").src = link;
+	});
+
+	const linkSber = "sberpay://invoicing/v2?bankInvoiceId=6e22355de58d40769675d7bc87687989&orderNumber=095e3ee4-f69b-7e59-84c5-46ef01c896b1";
+	document.getElementById("button-sber").addEventListener('click', () => {
+		window.location = linkSber;
+	});
+	document.getElementById("button-sber-iframe").addEventListener('click', () => {
+		document.getElementById("iframe").src = linkSber;
+	});
+</script>
+</body>
+</html>
