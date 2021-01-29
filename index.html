@@ -2,14 +2,19 @@
 <html>
 <head>
 	<title>Deeplink Test</title>
+	<style>
+		.hide {
+			display: none;
+		}
+	</style>
 </head>
 <body>
-<button id="button-youtube">Open Youtube</button>
-<button id="button-youtube-iframe">Open Youtube via iframe</button>
+<button id="button-youtube" class="hide">Open Youtube</button>
+<button id="button-youtube-iframe" class="hide">Open Youtube via iframe</button>
 <button id="button-youtube-link">Open Youtube via link</button>
 <br />
-<button id="button-sber">Open Sber</button>
-<button id="button-sber-iframe">Open Sber via iframe</button>
+<button id="button-sber" class="hide">Open Sber</button>
+<button id="button-sber-iframe" class="hide">Open Sber via iframe</button>
 <button id="button-sber-link">Open Sber via link</button>
 <iframe id="iframe" width="0" height="0"></iframe>
 <script type="text/javascript">
