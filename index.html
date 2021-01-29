@@ -6,9 +6,11 @@
 <body>
 <button id="button-youtube">Open Youtube</button>
 <button id="button-youtube-iframe">Open Youtube via iframe</button>
+<button id="button-youtube-link">Open Youtube via link</button>
 <br />
 <button id="button-sber">Open Sber</button>
 <button id="button-sber-iframe">Open Sber via iframe</button>
+<button id="button-sber-link">Open Sber via link</button>
 <iframe id="iframe" width="0" height="0"></iframe>
 <script type="text/javascript">
 	const link = "vnd.youtube://4KnNVK-udTU";
@@ -18,6 +20,12 @@
 	document.getElementById("button-youtube-iframe").addEventListener('click', () => {
 		document.getElementById("iframe").src = link;
 	});
+	document.getElementById("button-youtube-link").addEventListener('click', () => {
+		const a = document.createElement('a');
+		a.href = link;
+		a.target = '_blank';
+		a.click();
+	});
 
 	const linkSber = "sberpay://invoicing/v2?bankInvoiceId=6e22355de58d40769675d7bc87687989&orderNumber=095e3ee4-f69b-7e59-84c5-46ef01c896b1";
 	document.getElementById("button-sber").addEventListener('click', () => {
@@ -25,6 +33,12 @@
 	});
 	document.getElementById("button-sber-iframe").addEventListener('click', () => {
 		document.getElementById("iframe").src = linkSber;
+	});
+	document.getElementById("button-sber-link").addEventListener('click', () => {
+		const a = document.createElement('a');
+		a.href = linkSber;
+		a.target = '_blank';
+		a.click();
 	});
 </script>
 </body>
