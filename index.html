@@ -41,17 +41,11 @@
 		document.getElementById("iframe").src = linkSber;
 	});
 	document.getElementById("button-sber-link").addEventListener('click', () => {
-		document.getElementById("inform-board").innerText = 'Confirm in App...';
 		const a = document.createElement('a');
 		a.href = linkSber;
 		a.target = '_blank';
 		a.click();
-		setTimeout(() => {
-			document.getElementById("inform-board").innerText = 'Go to AppStore...';
-			setTimeout(() => {
-				window.top.location = 'https://apps.apple.com/ru/app/сбербанк-онлайн/id492224193';
-			}, 2000);
-		}, 4000);
+		document.getElementById("inform-board").innerText = 'Confirm in App...';
 	});
 </script>
 </body>
