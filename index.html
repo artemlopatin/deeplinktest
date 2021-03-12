@@ -2,50 +2,19 @@
 <html>
 <head>
 	<title>Deeplink Test</title>
-	<style>
-		.hide {
-			display: none;
-		}
-	</style>
 </head>
 <body>
-<button id="button-youtube" class="hide">Open Youtube</button>
-<button id="button-youtube-iframe" class="hide">Open Youtube via iframe</button>
-<button id="button-youtube-link" class="hide">Open Youtube via link</button>
-<br />
-<button id="button-sber" class="hide">Open Sber</button>
-<button id="button-sber-iframe" class="hide">Open Sber via iframe</button>
-<button id="button-sber-link">Open Sber via link</button>
+<input id="link-value" type="text" value="vnd.youtube://4KnNVK-udTU" />
+<button id="button-link">Open link</button>
 <div id="inform-board"></div>
 <iframe id="iframe" width="0" height="0"></iframe>
 <script type="text/javascript">
-	const link = "vnd.youtube://4KnNVK-udTU";
-	document.getElementById("button-youtube").addEventListener('click', () => {
-		window.location = link;
-	});
-	document.getElementById("button-youtube-iframe").addEventListener('click', () => {
-		document.getElementById("iframe").src = link;
-	});
-	document.getElementById("button-youtube-link").addEventListener('click', () => {
-		const a = document.createElement('a');
-		a.href = link;
+	document.getElementById("button-link").addEventListener('click', () => {
+		const a = document.createElement("a");
+		a.href = document.getElementById("link-value").value;
 		a.target = '_blank';
 		a.click();
-	});
-
-	const linkSber = "sberpay://invoicing/v2?bankInvoiceId=2833736d-a0ef-4eb3-9907-22c0bc9f66bb&redirect_uri=https://yoomoney.ru/main&additionalSecureToken=2833736d-a0ef-4eb3-9907-22c0bc9f66bb&operationType=app2app";
-	document.getElementById("button-sber").addEventListener('click', () => {
-		window.location = linkSber;
-	});
-	document.getElementById("button-sber-iframe").addEventListener('click', () => {
-		document.getElementById("iframe").src = linkSber;
-	});
-	document.getElementById("button-sber-link").addEventListener('click', () => {
-		const a = document.createElement('a');
-		a.href = linkSber;
-		a.target = '_blank';
-		a.click();
-		document.getElementById("inform-board").innerText = 'Confirm in App...';
+		document.getElementById("inform-board").innerText = 'Opening...';
 	});
 </script>
 </body>
